@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <html>
 <head>
@@ -29,9 +31,12 @@
         <!-- Login Form -->
         <form action="login" method="post">
             <input type="text" id="login" class="fadeIn second" name="username" placeholder="userName">
-            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
+        <span class="alert alert-danger" style="color: red">
+              <c:out value="${param.msgError}"/>
+          </span>
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
